@@ -14,10 +14,10 @@ import { TodoResponse } from '@/types';
  */
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ): Promise<NextResponse<TodoResponse>> {
   try {
-    const { id } = params;
+    const { id } = context.params;
 
     // Connect to MongoDB
     await connectToMongoDB();
