@@ -139,11 +139,10 @@ export async function PUT(
  */
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+  { params }: { params: { id: string } }
+): Promise<NextResponse<TodoResponse>> {
   try {
-    // Await params before using them
-    const { id } = await params;
+    const { id } = params;
 
     // Connect to MongoDB
     await connectToMongoDB();
