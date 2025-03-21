@@ -68,12 +68,10 @@ export async function GET(
  */
 export async function PUT(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+  { params }: { params: { id: string } }
+): Promise<NextResponse<TodoResponse>> {
   try {
-    // Await params before using them
-    const { id } = await params;
-
+    const { id } = params;
     const body = await request.json();
 
     // Validate update data
