@@ -68,10 +68,12 @@ export async function GET(
  */
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ): Promise<NextResponse<TodoResponse>> {
   try {
-    const { id } = params;
+    // Await params before using them
+    const { id } = await params;
+
     const body = await request.json();
 
     // Validate update data
@@ -139,10 +141,11 @@ export async function PUT(
  */
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ): Promise<NextResponse<TodoResponse>> {
   try {
-    const { id } = params;
+    // Await params before using them
+    const { id } = await params;
 
     // Connect to MongoDB
     await connectToMongoDB();
