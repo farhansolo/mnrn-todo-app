@@ -45,14 +45,12 @@ export default function TodoItem({
 
   // Handle delete
   const handleDelete = async () => {
-    if (window.confirm('Are you sure you want to delete this todo?')) {
-      try {
-        setIsDeleting(true);
-        await onDelete(todo._id!);
-      } catch (err) {
-        console.error('Failed to delete todo:', err);
-        setIsDeleting(false);
-      }
+    try {
+      setIsDeleting(true);
+      await onDelete(todo._id!);
+    } catch (err) {
+      console.error('Failed to delete todo:', err);
+      setIsDeleting(false);
     }
   };
 
@@ -113,6 +111,7 @@ export default function TodoItem({
             size="sm"
             onClick={handleDelete}
             isLoading={isDeleting}
+            loadingText="Deleting..."
             aria-label="Delete todo"
           >
             Delete

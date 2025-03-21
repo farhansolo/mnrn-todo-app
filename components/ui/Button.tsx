@@ -9,6 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   isLoading?: boolean;
+  loadingText?: string;
   children: React.ReactNode;
 }
 
@@ -17,6 +18,7 @@ export default function Button({
   variant = 'primary',
   size = 'md',
   isLoading = false,
+  loadingText = 'Loading...',
   children,
   className = '',
   disabled,
@@ -64,7 +66,7 @@ export default function Button({
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
             ></path>
           </svg>
-          Loading...
+          {loadingText}
         </span>
       ) : (
         children
