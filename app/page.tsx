@@ -1,7 +1,6 @@
 import React from 'react';
 import { connectToMongoDB } from '@/lib/db/mongodb';
 import Todo from '@/models/todo';
-import TodoList from '@/components/todos/TodoList';
 import TodoContainer from '@/components/todos/TodoContainer';
 
 // NEXT.JS SPECIFIC:

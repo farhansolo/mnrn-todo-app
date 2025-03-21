@@ -1,6 +1,6 @@
 'use client'; // Next.js App Router client component directive
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ITodo } from '@/types';
 import TodoItem from './TodoItem';
 
@@ -15,7 +15,9 @@ export default function TodoList({
   onDelete,
   onToggleComplete,
 }: TodoListProps) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLoading, setIsLoading] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [error, setError] = useState('');
 
   // If loading, show loading state

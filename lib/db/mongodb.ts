@@ -10,6 +10,7 @@ interface MongooseConnection {
 
 // Initialize the global connection object with proper type
 declare global {
+  // eslint-disable-next-line no-var
   var mongooseConnection: MongooseConnection | undefined;
 }
 
