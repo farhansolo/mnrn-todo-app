@@ -4,6 +4,8 @@ import Todo from '@/models/todo';
 import { createTodoSchema } from '@/validation/todo';
 import { TodoResponse, TodosResponse } from '@/types';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * GET /api/todos - Retrieve all todos
  *

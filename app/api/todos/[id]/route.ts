@@ -4,6 +4,8 @@ import Todo from '@/models/todo';
 import { updateTodoSchema } from '@/validation/todo';
 import { TodoResponse } from '@/types';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * GET /api/todos/[id] - Get a specific todo by ID
  *
