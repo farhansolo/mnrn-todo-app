@@ -3,6 +3,9 @@ import { connectToMongoDB } from '@/lib/db/mongodb';
 import Todo from '@/models/todo';
 import TodoContainer from '@/components/todos/TodoContainer';
 
+// Ensure this page always gets fresh data on each request
+export const dynamic = 'force-dynamic';
+
 // NEXT.JS SPECIFIC:
 // This is a Server Component by default (no 'use client' directive)
 // It fetches data on the server before rendering
